@@ -1,0 +1,92 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Agregar Pedido</h3>
+        </div>
+        <div class="card-body">
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="Referencia:">Proveedor:</label>
+                    <div *ngIf="proveedor.invalid" class="alert alert-danger">
+                        <div *ngIf="proveedor.errors.required">
+                            Proveedor es requerido.
+                        </div>
+                    </div>
+                    <select name="proveedor" id="proveedor" class="form-control"
+                        [(ngModel)]="pedido.proveedoresidproveedor" #proveedor="ngModel" required>
+                        <option value="" selected>Seleccione un proveedor</option>
+                        <option [ngValue]="proveedor" *ngFor="let proveedor of proveedores">
+                            {{proveedor.nombreProveedor}}</option>
+                    </select>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label for="Referencia:">Producto:</label>
+                        <div *ngIf="producto.invalid" class="alert alert-danger">
+                            <div *ngIf="producto.errors.required">
+                                producto es requerido.
+                            </div>
+                        </div>
+                        <select name="ListaProductos" id="ListaProductos" class="form-control"
+                            [(ngModel)]="pedido.productosidproducto" #producto="ngModel" required>
+                            <option value="" selected>Seleccione un producto</option>
+                            <option [ngValue]="producto" *ngFor="let producto of productos">{{producto.nombreProducto}}
+                            </option>
+                        </select>
+                        <select name="ListaProductos1" id="ListaProductos1" class="form-control"
+                            [(ngModel)]="pedido.productosidproducto1" #producto1="ngModel" required>
+                            <option [ngValue]="" selected>Seleccione un producto</option>
+                            <option [ngValue]="producto" *ngFor="let producto of productos">{{producto.nombreProducto}}
+                            </option>
+                        </select>
+                        <select name="ListaProductos2" id="ListaProductos2" class="form-control"
+                            [(ngModel)]="pedido.productosidproducto2" #producto2="ngModel" required>
+                            <option [ngValue]="" selected>Seleccione un producto</option>
+                            <option [ngValue]="producto" *ngFor="let producto of productos">{{producto.nombreProducto}}
+                            </option>
+                        </select>
+                        <select name="ListaProductos3" id="ListaProductos3" class="form-control"
+                            [(ngModel)]="pedido.productosidproducto3" #producto3="ngModel" required>
+                            <option [ngValue]="" selected>Seleccione un producto</option>
+                            <option [ngValue]="producto" *ngFor="let producto of productos">{{producto.nombreProducto}}
+                            </option>
+                        </select>
+                        <select name="ListaProductos4" id="ListaProductos4" class="form-control"
+                            [(ngModel)]="pedido.productosidproducto4" #producto4="ngModel" required>
+                            <option [ngValue]="" selected>Seleccione un producto</option>
+                            <option [ngValue]="producto" *ngFor="let producto of productos">{{producto.nombreProducto}}
+                            </option>
+                        </select>
+
+                    </div>
+                    <div class="col">
+                        <label for="Referencia:">Cantidad:</label>
+                        <div *ngIf="cantidad.invalid" class="alert alert-danger">
+                            <div *ngIf="cantidad.errors.required">
+                                cantidad es requerido.
+                            </div>
+                        </div>
+                        <input [(ngModel)]="pedido.cantidad" name="cantidad" id="cantidad" class="form-control"
+                            placeholder="Cantidad" type="number" #cantidad="ngModel" min="1" required>
+                        <input [(ngModel)]="pedido.cantidad1" name="cantidad1" id="cantidad1" class="form-control"
+                            placeholder="Cantidad" type="number" #cantidad1="ngModel" required>
+                        <input [(ngModel)]="pedido.cantidad2" name="cantidad2" id="cantidad2" class="form-control"
+                            placeholder="Cantidad" type="number" #cantidad2="ngModel" required>
+                        <input [(ngModel)]="pedido.cantidad3" name="cantidad3" id="cantidad3" class="form-control"
+                            placeholder="Cantidad" type="number" #cantida3="ngModel" required>
+                        <input [(ngModel)]="pedido.cantidad4" name="cantidad4" id="cantidad4" class="form-control"
+                            placeholder="Cantidad" type="number" #cantidad4="ngModel" required>
+                    </div>
+                </div>
+                <div>
+
+                    <br>
+                </div>
+                <button (click)="Guardar()" class="btn btn-danger"
+                    *ngIf="!proveedor.invalid && !producto.invalid && !cantidad.invalid"
+                    style="margin-left: 250px;">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

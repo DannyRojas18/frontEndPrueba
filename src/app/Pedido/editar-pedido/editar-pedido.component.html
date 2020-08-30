@@ -1,0 +1,50 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Informacion Pedido {{pedido.idPedidos}}</h3>
+        </div>
+        <div class="card-body">
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="Referencia:">Proveedor:</label>
+                    {{pedido.proveedoresidproveedor.nombreProveedor}}
+                </div>
+
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Cantidad</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">{{pedido.productosidproducto.nombreProducto}}</th>
+                        <td>{{pedido.cantidad}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">{{pedido.productosidproducto1.nombreProducto}}</th>
+                        <td>{{pedido.cantidad1}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">{{pedido.productosidproducto2.nombreProducto}}</th>
+                        <td>{{pedido.cantidad2}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">{{pedido.productosidproducto3.nombreProducto}}</th>
+                        <td>{{pedido.cantidad3}}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">{{pedido.productosidproducto4.nombreProducto}}</th>
+                        <td>{{pedido.cantidad4}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                <div>
+                    <br>
+                </div>
+                <button (click)="Guardar()" class="btn btn-danger" style="margin-left: 250px;">Atras</button>
+            </form>
+        </div>
+    </div>
+</div>

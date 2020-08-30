@@ -1,0 +1,28 @@
+<div class="container col-md-6">
+    <div class="card">
+        <div class="card-header">
+            <h3>Actualizar Proveedor</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group">
+                    <label for="Referencia:">Nombre:</label>
+                    <input [(ngModel)]="proveedor.nombreProveedor" name="referencia" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="">Tipo documento:</label>
+                    <select [(ngModel)]="proveedor.tipoDocumentoProveedor" name="tipoDocumento" class="form-control" type="text">
+                        <option [ngValue]="'CC'" selected>Cedula ciudadania</option>
+                        <option [ngValue]="'NIT'">NIT</option>
+                        <option [ngValue]="'CE'">Cedula extrangera</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                    <label for="Referencia:">Numero Documento:</label>
+                    <input [(ngModel)]="proveedor.numDocumentoProveedor" name="numDocumento" type="text" class="form-control">
+                </div>
+                <button (click)="Actualizar(proveedor)" class="btn btn-danger">Actualizar</button>
+            </form>
+        </div>
+    </div>
+</div>
